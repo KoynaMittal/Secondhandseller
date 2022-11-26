@@ -152,7 +152,7 @@ const RegisterScreen = ({ location, history }) => {
         />
       )}
       {verification && (
-        <Message variant='success'>{verification.response}</Message>
+        <Message variant='success'>Successfully registered</Message>
       )}
       {error && <Message variant='danger'>{error}</Message>}
       {message && <Message variant='danger'>{message}</Message>}
