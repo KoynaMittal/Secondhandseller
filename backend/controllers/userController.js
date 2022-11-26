@@ -217,7 +217,7 @@ const emailSend = asyncHandler(async (req, res) => {
     to: receiver,
     subject: 'You have a buyer',
 
-    html: `<div style="background:#31686e;text-align:center;color:white">One of the KinBechSaman.com user wants
+    html: `<div style="background:#31686e;text-align:center;color:white">One of the user wants
     to buy your ${productName}. </div><br/>
     <p>His/Her name is ${name} and is a resident of ${address}.His/Her
     email is: ${email} and registered contact no is: ${phone_no}.</p>

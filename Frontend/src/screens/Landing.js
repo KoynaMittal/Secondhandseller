@@ -41,7 +41,7 @@ const Landing = ({  match }) => {
           <LinkContainer to={userData ? '/createproduct' : '/login'}>
             <Button className='btn-primary  '>
               <i style={{ color: 'white' }} className='fas fa-plus'></i>{' '}
-              <span className='textcolor'>List Your Property</span>
+              <span className='textcolor'>List Your Product</span>
             </Button>
           </LinkContainer>
         </Col>
