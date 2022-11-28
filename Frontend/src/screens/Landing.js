@@ -10,6 +10,15 @@ import Paginate from '../components/Paginate'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
 import { PRODUCT_CREATE_RESET } from '../types/productConstants'
+import {
+  MDBCard,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBRow,
+  MDBCol
+} from 'mdb-react-ui-kit';
 const Landing = ({  match }) => {
   const keyword = match.params.keyword
   const pageNumber = match.params.pageNumber || 1
@@ -52,13 +61,13 @@ const Landing = ({  match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Row>
+          <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
             {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4}>
+              <MDBCol key={product._id} >
                 <Product product={product} />
-              </Col>
+              </MDBCol>
             ))}
-          </Row>
+          </MDBRow>
           <Paginate
             className='paginate'
             pages={pages}

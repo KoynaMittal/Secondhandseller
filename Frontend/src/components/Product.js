@@ -1,22 +1,35 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
+  MDBBtn
+} from 'mdb-react-ui-kit';
+
 const Product = ({ product }) => {
   return (
     <>
-      <Card className='my-3 p-3 rounded'>
+      <MDBCard className='h-100'>
         <Link to={`/product/${product._id}`}>
-          <Card.Img className='card-image' src={product.images[0].image1} />
+          <MDBCardImage
+            src={product.images[0].image1}
+            alt='...'
+            position='top'
+          />
         </Link>
-        <Card.Body>
+        <MDBCardBody>
           <Link to={`/product/${product._id}`}>
-            <Card.Title as='p' className='name-label'>
-              <strong>{product.name}</strong>
-            </Card.Title>
+            <MDBCardTitle> <strong>{product.name}</strong></MDBCardTitle>
           </Link>
-          <Card.Text as='h3'>Rs {product.Cost.price}</Card.Text>
-        </Card.Body>
-      </Card>
+          <MDBCardText>
+            Rs {product.Cost.price}
+            </MDBCardText>
+        </MDBCardBody>
+      </MDBCard>
     </>
   )
 }
