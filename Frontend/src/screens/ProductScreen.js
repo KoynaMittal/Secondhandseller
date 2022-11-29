@@ -86,15 +86,17 @@ const ProductScreen = ({ match, history }) => {
       <Link to='/' className='btn btn-success my-3'>
         Go Back
       </Link>
-      <br />
       {userData && userData._id === product.user && (
+        <div style={{float: 'right'}}>
         <Link
           to={`/admin/product/${match.params.id}/edit`}
           className='btn btn-primary my-3'
         >
           Edit Product
         </Link>
-      )}
+        </div>
+    )}
+    <br />
 
       {loading ? (
         <Loader />
@@ -120,7 +122,7 @@ const ProductScreen = ({ match, history }) => {
 
             <Col className='borderaround setheight' md={6}>
               <p className='details'>
-                <i className='fas fa-info'></i> General Details
+                General Details
               </p>
 
               <Row>
@@ -210,7 +212,7 @@ const ProductScreen = ({ match, history }) => {
           <Row>
             <Col className='borderaround mt-5' md={10}>
               <p className='details'>
-                <i className='fas fa-info'></i> Seller Details
+                Seller Details
               </p>
 
               <Row className='mb-2'>
@@ -242,19 +244,7 @@ const ProductScreen = ({ match, history }) => {
                     <li>{product?.seller?.selleraddress}</li>
                     <li>
                       {product?.seller?.phoneNo?.mobile}{' '}
-                      <span>
-                        {product?.seller?.phoneNo?.isVerified ? (
-                          <span>
-                            <i className='fas fa-mobile-alt'></i>
-                            <span className='underlined'>verified</span>
-                          </span>
-                        ) : (
-                          <span>
-                            <i className='fas fa-mobile-alt'></i>
-                            <span className='underlined'>unverified</span>
-                          </span>
-                        )}{' '}
-                      </span>
+                    
                     </li>
                     <li></li>
                   </ul>
@@ -273,7 +263,7 @@ const ProductScreen = ({ match, history }) => {
           <Row className='mt-3'>
             <Col className='borderaround mt-5 ' md={10}>
               <p className='details'>
-                <i className='fas fa-info'></i> Pricing Details
+                Pricing Details
               </p>
               <Row>
                 <Col className='product' md={6} sm={6} xs={4}>
@@ -294,15 +284,14 @@ const ProductScreen = ({ match, history }) => {
           <Row>
             <Col className='borderaround mt-5' md={10} sm={12} xs={12}>
               <p className='details '>
-                <i className='fas fa-info'></i> Description
+                Description
               </p>
-              <p className='detailsdescription'>{product.description}</p>
+              <div className='detailsdescription'>{product.description}</div>
             </Col>
           </Row>
           <Row>
             <Col className='borderaround mt-5' md={10}>
-              <p className='details'>
-                <i className='fas fa-info'></i> Delivery Information
+              <p className='details'>Delivery Information
               </p>
               <Row>
                 <Col className='product' md={6} sm={6} xs={5}>
