@@ -213,7 +213,7 @@ const emailSend = asyncHandler(async (req, res) => {
   console.log('user is', email)
 
   var mailOptions = {
-    from: process.env.USER1,
+    from: 'aahana123456@proton.me',
     to: receiver,
     subject: 'You have a buyer',
 
@@ -224,7 +224,7 @@ const emailSend = asyncHandler(async (req, res) => {
 
     He/She says:  ${text}`,
   }
-
+  
   sgMail.send(mailOptions, function (error, info) {
     if (error) {
       res.status(400)
