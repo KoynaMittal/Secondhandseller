@@ -111,6 +111,8 @@ color:white;
 /* min-height: 1000px; */
 /* border: 2px solid red; */
 /* overflow: scroll; */
+  white-space: pre-wrap;
+
 }
 .setheight{
 max-height: 160px;
